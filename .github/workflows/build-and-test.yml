@@ -1,0 +1,27 @@
+name: Build & test on Linux
+
+on: [push]
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                ocaml-compiler: ["4.14.x"]
+
+        steps:
+            - uses: actions/checkout@v4
+
+            - name: Setup OCaml ${{ matrix.ocaml-compiler }}
+              uses: ocaml/setup-ocaml@v2
+              with:
+                  ocaml-compiler: ${{ matrix.ocaml-compiler }}
+
+            - name: Opam dependencies
+              run: opam install --deps-only -t .
+
+            - name: Build
+              run: opam exec -- dune build
+
+            - name: Runtest
+              run: opam exec -- dune runtest
