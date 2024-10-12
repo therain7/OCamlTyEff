@@ -13,7 +13,7 @@ homepage: "https://github.com/therain7/OCamlTyEff"
 bug-reports: "https://github.com/therain7/OCamlTyEff/issues"
 depends: [
   "ocaml"
-  "dune" {>= "3.7"}
+  "dune" {>= "3.16"}
   "base"
   "stdio"
   "lambda-term"
