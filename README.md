@@ -61,7 +61,7 @@ Take a look at provided [examples](examples.t) to get a grasp of what's supporte
 First install the dependencies using `opam`:
 
 ```bash
-opam install --deps-only -t -y .
+opam install --locked --deps-only -t -y .
 ```
 
 Then build and run REPL using `dune`:
