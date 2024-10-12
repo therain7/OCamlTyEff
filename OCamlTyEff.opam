@@ -43,7 +43,7 @@ build: [
   ]
 ]
 pin-depends: [
-  [ "monads.dev" "git+https://github.com/BinaryAnalysisPlatform/bap#511b64ce7fcf619eae373a6a11c50c668a0cf311" ]
-  [ "bap-common.dev" "git+https://github.com/BinaryAnalysisPlatform/bap#511b64ce7fcf619eae373a6a11c50c668a0cf311" ]
-  [ "ppx_bap.dev" "git+https://github.com/BinaryAnalysisPlatform/bap#511b64ce7fcf619eae373a6a11c50c668a0cf311" ]
+  [ "monads.dev" "git+https://github.com/BinaryAnalysisPlatform/bap#aa2165ef1fb8c458f7cad6050ba81aa38d2c9226" ]
+  [ "bap-common.dev" "git+https://github.com/BinaryAnalysisPlatform/bap#aa2165ef1fb8c458f7cad6050ba81aa38d2c9226" ]
+  [ "ppx_bap.dev" "git+https://github.com/BinaryAnalysisPlatform/bap#aa2165ef1fb8c458f7cad6050ba81aa38d2c9226" ]
 ]
