@@ -1,8 +1,8 @@
 (include_subdirs no)
 
 (library
- (name parse_test)
- (libraries base stdio ast parse)
+ (name ParseTest)
+ (libraries base stdio LAst LParse)
  (preprocess
   (pps ppx_expect))
  (inline_tests)

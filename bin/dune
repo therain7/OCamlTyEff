@@ -7,10 +7,10 @@
   react
   zed
   lambda-term
-  misc
-  ast
-  parse
-  types
-  infer
-  eval
-  builtin))
+  LMisc
+  LAst
+  LParse
+  LTypes
+  LInfer
+  LEval
+  LBuiltin))

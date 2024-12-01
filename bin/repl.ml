@@ -5,7 +5,7 @@
 open! Base
 open Stdio
 open Lwt
-open Misc
+open LMisc
 
 open LTerm_text
 open LTerm_style
@@ -149,7 +149,7 @@ class read_line ~term ~history ~completion_ids =
 
 let rec repl_loop ~term ~history ~rec_types ((ty_env, _) as env) =
   let completion_ids =
-    Types.Env.idents ty_env |> List.map ~f:(fun (Ident.Ident name) -> name)
+    LTypes.Env.idents ty_env |> List.map ~f:(fun (Ident.Ident name) -> name)
   in
   let rl = new read_line ~term ~history ~completion_ids in
   rl#run

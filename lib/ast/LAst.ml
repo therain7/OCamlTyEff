@@ -3,8 +3,8 @@
 (** SPDX-License-Identifier: MIT *)
 
 open! Base
-open Misc
-open Types
+open LMisc
+open LTypes
 
 type constant =
   | Const_integer of int  (** Integer such as [25] *)

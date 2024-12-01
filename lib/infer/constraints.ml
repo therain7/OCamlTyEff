@@ -3,7 +3,7 @@
 (** SPDX-License-Identifier: MIT *)
 
 open! Base
-open Types
+open LTypes
 
 module Constr = struct
   module T = struct

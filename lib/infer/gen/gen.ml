@@ -7,7 +7,7 @@ module BoundVars = Pattern.BoundVars
 module ConArityAssumpt = Common.ConArityAssumpt
 
 open! Base
-open Misc
+open LMisc
 open Common
 
 type defined_type = Structure.defined_type = {id: Ident.t; arity: int}

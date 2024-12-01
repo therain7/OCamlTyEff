@@ -4,10 +4,10 @@
 
 open! Base
 open Monads.Std
-open Misc
-open Types
+open LMisc
+open LTypes
 open Constraints
-open Ast
+open LAst
 
 module Assumptions : sig
   (**

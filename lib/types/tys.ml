@@ -4,7 +4,7 @@
 
 open! Base
 open Vars
-open Misc
+open LMisc
 
 module rec Eff : sig
   module Label : sig

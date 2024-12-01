@@ -3,7 +3,7 @@
 (** SPDX-License-Identifier: MIT *)
 
 open! Base
-open Types
+open LTypes
 open Constraints
 
 (** Substitution. Maps variables to types and effects *)

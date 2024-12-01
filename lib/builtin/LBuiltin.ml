@@ -4,17 +4,17 @@
 
 open! Base
 
-open Misc
-open Types
+open LMisc
+open LTypes
 open Helpers
-open Eval
+open LEval
 
 open EvalMonad.Let
 open EvalMonad.Let_syntax
 open EvalMonad.Eval
 
-module TyEnv = Types.Env
-module EvalEnv = Eval.Env
+module TyEnv = LTypes.Env
+module EvalEnv = LEval.Env
 
 let prelude = Prelude.prelude
 
@@ -102,7 +102,7 @@ let b_eq =
   let rec helper (x : Val.t) (y : Val.t) =
     match (x, y) with
     | Val_const x, Val_const y ->
-        Ast.equal_constant x y
+        LAst.equal_constant x y
     | Val_con (id1, Some arg1), Val_con (id2, Some arg2)
       when Ident.equal id1 id2 ->
         helper arg1 arg2

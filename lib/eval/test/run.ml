@@ -4,11 +4,11 @@
 
 open! Base
 open Stdio
-open Eval
+open LEval
 
 let run_env ppf init_env code =
   let open Format in
-  match Parse.parse code with
+  match LParse.parse code with
   | Some program ->
       List.fold program ~init:init_env ~f:(fun env str_item ->
           match eval_structure_item ~printer:print_string env str_item with
@@ -28,7 +28,7 @@ let run_env ppf init_env code =
       print_endline "syntax error" ;
       init_env
 
-let std_env = run_env Format.str_formatter Builtin.eval_env Builtin.prelude
+let std_env = run_env Format.str_formatter LBuiltin.eval_env LBuiltin.prelude
 
 let run code =
   let _ : Env.t = run_env Format.std_formatter std_env code in

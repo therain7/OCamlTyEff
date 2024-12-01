@@ -3,9 +3,9 @@
 (** SPDX-License-Identifier: MIT *)
 
 open! Base
-open Types
+open LTypes
 open Constraints
-open Ast
+open LAst
 
 open Common
 module As = Assumptions

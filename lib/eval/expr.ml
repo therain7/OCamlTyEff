@@ -3,7 +3,7 @@
 (** SPDX-License-Identifier: MIT *)
 
 open! Base
-open Ast
+open LAst
 open Values
 
 open EvalMonad.Let

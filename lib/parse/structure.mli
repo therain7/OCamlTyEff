@@ -4,6 +4,6 @@
 
 open! Base
 open Angstrom
-open Ast
+open LAst
 
 val parse_structure : structure t

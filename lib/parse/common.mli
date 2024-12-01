@@ -4,7 +4,7 @@
 
 open! Base
 open Angstrom
-open Ast
+open LAst
 
 val ws : unit t
 (** skip whitespaces *)

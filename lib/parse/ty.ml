@@ -4,7 +4,7 @@
 
 open! Base
 open Angstrom
-open Types
+open LTypes
 open Common
 
 (** ['a] *)

@@ -3,7 +3,7 @@
 (** SPDX-License-Identifier: MIT *)
 
 open! Base
-open Types
+open LTypes
 
 val close_over : Ty.t -> weak_counter:int -> Scheme.t * int
 (** Close effects, rename and quantify all (not weak) variables in a type.

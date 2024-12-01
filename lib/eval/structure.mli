@@ -3,8 +3,8 @@
 (** SPDX-License-Identifier: MIT *)
 
 open! Base
-open Misc
-open Ast
+open LMisc
+open LAst
 open Values
 
 val eval : structure_item -> (Val.t option * Ident.t list) EvalMonad.t

@@ -7,7 +7,7 @@ open Pp
 
 let parse_ty = Ty.parse_ty
 
-open Types
+open LTypes
 
 let%expect_test "parse_var" =
   pp Ty.pp parse_ty "'some_type_var" ;

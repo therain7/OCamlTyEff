@@ -4,7 +4,7 @@
 
 open! Base
 
-type env = Types.Env.t * Eval.Env.t
+type env = LTypes.Env.t * LEval.Env.t
 
 val std_env : env
 

@@ -4,9 +4,9 @@
 
 open! Base
 open Monads.Std
-open Misc
+open LMisc
 
-open Types
+open LTypes
 open Constraints
 
 module SolveMonad : sig

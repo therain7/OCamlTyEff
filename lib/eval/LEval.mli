@@ -3,8 +3,8 @@
 (** SPDX-License-Identifier: MIT *)
 
 open! Base
-open Misc
-open Ast
+open LMisc
+open LAst
 
 module Val : module type of Values.Val
 

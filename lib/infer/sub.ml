@@ -3,7 +3,7 @@
 (** SPDX-License-Identifier: MIT *)
 
 open! Base
-open Types
+open LTypes
 open Constraints
 
 type substitute = Ty of Ty.t | Eff of Eff.t

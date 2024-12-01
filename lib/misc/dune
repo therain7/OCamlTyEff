@@ -1,5 +1,5 @@
 (library
- (name misc)
+ (name LMisc)
  (public_name OCamlTyEff.Misc)
  (libraries base monads)
  (preprocess

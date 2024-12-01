@@ -4,8 +4,8 @@
 
 open! Base
 open Angstrom
-open Misc
-open Ast
+open LMisc
+open LAst
 open Common
 open Pattern
 

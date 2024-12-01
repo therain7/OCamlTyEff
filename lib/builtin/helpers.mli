@@ -3,9 +3,9 @@
 (** SPDX-License-Identifier: MIT *)
 
 open! Base
-open Misc
-open Types
-open Eval
+open LMisc
+open LTypes
+open LEval
 
 (** Built-in function *)
 type builtin = Val.t -> Val.t EvalMonad.t

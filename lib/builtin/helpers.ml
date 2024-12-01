@@ -3,20 +3,20 @@
 (** SPDX-License-Identifier: MIT *)
 
 open! Base
-open Misc
-open Types
+open LMisc
+open LTypes
 
-open Eval.EvalMonad.Let
-open Eval.EvalMonad.Let_syntax
-open Eval.EvalMonad.Eval
-open Eval
+open LEval.EvalMonad.Let
+open LEval.EvalMonad.Let_syntax
+open LEval.EvalMonad.Eval
+open LEval
 
 type builtin = Val.t -> Val.t EvalMonad.t
 
 let id name = Ident.Ident name
 
 let sc str =
-  let ty = Parse.parse_ty_exn str in
+  let ty = LParse.parse_ty_exn str in
   Scheme.Forall (Ty.vars ty, ty)
 
 let var x = Ty.Ty_var (Var x)

@@ -4,7 +4,7 @@
 
 open! Base
 open Angstrom
-open Ast
+open LAst
 open Common
 
 (* ======= Single patterns parsing ======= *)

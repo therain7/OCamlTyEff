@@ -5,7 +5,7 @@
 module TyError = TyError
 
 open! Base
-open Types
+open LTypes
 
 open Constraints
 open Gen
