@@ -84,6 +84,7 @@ let peek_custom_infix_operator_name =
     else fail "not a infix-symbol"
   in
 
+  (* XXX: it's bad and not needed *)
   let rec peek_rest acc index =
     peek_string index
     >>| (fun s -> String.get s (String.length s - 1)) (* get last char *)
@@ -217,6 +218,8 @@ type ('oprnd, 'op) infix_helpers =
   ; get_binding_power: 'op -> int * int
   ; fold: 'oprnd -> 'op * 'oprnd -> 'oprnd }
 
+(* XXX: it looks bad, has a weird interface, works fine
+   but probably should be rewritten anyway *)
 let parse_operators ?prefix ?infix ~parse_oprnd
     ?(parse_prefix_rhs = fun _ -> parse_oprnd)
     ?(parse_infix_rhs = fun _ -> parse_oprnd) () =
@@ -238,7 +241,9 @@ let parse_operators ?prefix ?infix ~parse_oprnd
     (* check if {infix} supplied *)
     Option.value_map infix ~default:(return lhs) ~f:(fun infix ->
         many
-          (let* {op; op_length} = ws *> infix.peek in
+          ((* XXX: apparently `peek` is not needed at all as
+              parser backtracking basically does its job here *)
+           let* {op; op_length} = ws *> infix.peek in
            let l_bp, r_bp = infix.get_binding_power op in
            if l_bp < min_bp then fail "found op with lower binding power"
            else

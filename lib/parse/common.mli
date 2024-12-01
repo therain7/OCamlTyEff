@@ -47,6 +47,11 @@ val parse_let_binding :
   [let rec ValName1 PArg1 = E1 and P1 = E2 and ...]
 *)
 
+(*
+  XXX: operators parser below has a horrible interface and
+  probably should've been written better :)
+*)
+
 (**
   Helpers needed to parse expressions with prefix operators
 
@@ -83,7 +88,7 @@ type 'op infix_operator = {op: 'op; op_length: int}
 type ('oprnd, 'op) infix_helpers =
   { peek: 'op infix_operator t
   ; get_binding_power: 'op -> int * int
-  ; fold: 'oprnd -> 'op * 'oprnd -> 'oprnd }
+  ; fold: 'oprnd -> 'op * 'oprnd -> 'oprnd (* it's basically apply *) }
 
 val parse_operators :
      ?prefix:('oprnd, 'prefix_op) prefix_helpers

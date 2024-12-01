@@ -149,8 +149,11 @@ let get_infix_binding_power = function
   | IOpSeq ->
       (11, 10)
   | IOpTuple ->
+      (* XXX: tuple operator is not right associative and
+         (1, (2, 3)) is not (1, 2, 3) *)
       (51, 50)
   | IOpCustom (Ident id) -> (
+      (* XXX: operators parser has indeed a bad interface  *)
       let prefix_powers_map =
         [ (["**"], (91, 90))
         ; (["*"; "/"; "%"], (85, 86))
