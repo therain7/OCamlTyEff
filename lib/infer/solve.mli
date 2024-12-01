@@ -3,7 +3,7 @@
 (** SPDX-License-Identifier: MIT *)
 
 open! Base
-open Types
+open LTypes
 open Constraints
 
 val weaken : Ty.t -> Ty.t

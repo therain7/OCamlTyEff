@@ -3,10 +3,10 @@
 (** SPDX-License-Identifier: MIT *)
 
 open! Base
-open Misc
-open Types
+open LMisc
+open LTypes
 open Constraints
-open Ast
+open LAst
 
 open Common
 

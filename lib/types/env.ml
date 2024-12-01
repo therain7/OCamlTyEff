@@ -4,7 +4,7 @@
 
 open! Base
 open Tys
-open Misc
+open LMisc
 
 type types_arity = (Ident.t, int, Ident.comparator_witness) Map.t
 

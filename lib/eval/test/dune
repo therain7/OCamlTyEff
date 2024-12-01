@@ -1,6 +1,6 @@
 (library
- (name eval_test)
- (libraries base stdio parse eval builtin)
+ (name EvalTest)
+ (libraries base stdio LParse LEval LBuiltin)
  (preprocess
   (pps ppx_expect))
  (inline_tests)

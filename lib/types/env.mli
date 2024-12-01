@@ -4,7 +4,7 @@
 
 open! Base
 open Tys
-open Misc
+open LMisc
 
 (** Type environment. Maps identifiers to types *)
 type t

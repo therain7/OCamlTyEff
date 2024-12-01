@@ -4,11 +4,11 @@
 
 open! Base
 open Stdio
-open Ast
+open LAst
 
 (** Parse string and pretty print the output *)
 let run string =
-  match Parse.parse string with
+  match LParse.parse string with
   | Some str ->
       pp_structure Format.std_formatter str
   | None ->

@@ -4,8 +4,8 @@
 
 open! Base
 open Monads.Std
-open Misc
-open Ast
+open LMisc
+open LAst
 
 module rec Val : sig
   type t =

@@ -6,12 +6,12 @@ open! Base
 open LTerm_text
 open Lwt
 
-open Misc
-open Types
-open Eval
+open LMisc
+open LTypes
+open LEval
 
-module TyEnv = Types.Env
-module EvalEnv = Eval.Env
+module TyEnv = LTypes.Env
+module EvalEnv = LEval.Env
 
 type env = TyEnv.t * EvalEnv.t
 
@@ -25,28 +25,28 @@ let err_color = LTerm_style.lred
 
 let std_env =
   let prelude =
-    Parse.parse Builtin.prelude
+    LParse.parse LBuiltin.prelude
     |> Option.value_exn ~message:"Failed to parse prelude"
   in
-  List.fold prelude ~init:(Builtin.ty_env, Builtin.eval_env)
+  List.fold prelude ~init:(LBuiltin.ty_env, LBuiltin.eval_env)
     ~f:(fun (ty_env, eval_env) str_item ->
       let ty_env, _, _ =
-        Infer.infer_structure_item ty_env str_item
+        LInfer.infer_structure_item ty_env str_item
         |> Result.map_error ~f:(fun _ -> "Failed to infer prelude")
         |> Result.ok_or_failwith
       in
       let eval_env, _, _ =
-        Eval.eval_structure_item ~printer:(fun _ -> ()) eval_env str_item
+        LEval.eval_structure_item ~printer:(fun _ -> ()) eval_env str_item
         |> Result.map_error ~f:(fun _ -> "Failed to eval prelude")
         |> Result.ok_or_failwith
       in
       (ty_env, eval_env) )
 
 let parse str =
-  match Parse.parse str with Some res -> return res | None -> fail ParseError
+  match LParse.parse str with Some res -> return res | None -> fail ParseError
 
 let ty_error_to_string = function
-  | Infer.TyError.UnificationMismatch ->
+  | LInfer.TyError.UnificationMismatch ->
       "Unification mismatch"
   | UnificationFailTy (ty1, ty2) ->
       Format.asprintf "Failed to unify %a and %a" Ty.pp ty1 Ty.pp ty2
@@ -86,7 +86,7 @@ let ty_error_to_string = function
       Format.sprintf {|"%s" is not yet implemented :(|} desc
 
 let infer_item ~rec_types ty_env str_item =
-  match Infer.infer_structure_item ~rec_types ty_env str_item with
+  match LInfer.infer_structure_item ~rec_types ty_env str_item with
   | Ok res ->
       return res
   | Error err ->
@@ -103,7 +103,7 @@ let eval_error_to_text eval_env = function
 
 let eval_item ~term eval_env str_item =
   match
-    Eval.eval_structure_item
+    LEval.eval_structure_item
       ~printer:(fun str ->
         let (_ : unit t) = LTerm.fprint term str in
         () )

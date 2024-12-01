@@ -3,10 +3,10 @@
 (** SPDX-License-Identifier: MIT *)
 
 open! Base
-open Misc
-open Types
+open LMisc
+open LTypes
 open Constraints
-open Ast
+open LAst
 
 module Assumptions = struct
   type t = (Ident.t, Var.t list, Ident.comparator_witness) Map.t

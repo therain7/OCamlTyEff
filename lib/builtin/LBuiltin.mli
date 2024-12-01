@@ -4,10 +4,10 @@
 
 open! Base
 
-val ty_env : Types.Env.t
+val ty_env : LTypes.Env.t
 (** Type environment containing bindings for built-ins *)
 
-val eval_env : Eval.Env.t
+val eval_env : LEval.Env.t
 (** Eval environment containing bindings for built-ins *)
 
 val prelude : string

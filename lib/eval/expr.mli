@@ -3,7 +3,7 @@
 (** SPDX-License-Identifier: MIT *)
 
 open! Base
-open Ast
+open LAst
 open Values
 
 val eval_let_rec : value_binding list -> Bounds.t EvalMonad.t

@@ -3,8 +3,8 @@
 (** SPDX-License-Identifier: MIT *)
 
 open! Base
-open Misc
-open Ast
+open LMisc
+open LAst
 open Values
 
 open EvalMonad.Let
@@ -21,7 +21,7 @@ let rec eval pat value =
       return (Bounds.singleton id value)
   | Pat_constant const1 -> (
     match value with
-    | Val_const const2 when Ast.equal_constant const1 const2 ->
+    | Val_const const2 when equal_constant const1 const2 ->
         return Bounds.empty
     | _ ->
         fail match_failure )

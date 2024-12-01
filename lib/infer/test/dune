@@ -1,8 +1,8 @@
 (include_subdirs no)
 
 (library
- (name infer_test)
- (libraries base stdio parse infer types builtin)
+ (name InferTest)
+ (libraries base stdio LParse LInfer LTypes LBuiltin)
  (preprocess
   (pps ppx_expect))
  (inline_tests)

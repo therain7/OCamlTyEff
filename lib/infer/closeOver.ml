@@ -5,7 +5,7 @@
 open! Base
 open Monads.Std
 
-open Types
+open LTypes
 open Solve
 
 (**
